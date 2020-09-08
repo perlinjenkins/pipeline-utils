@@ -1,8 +1,11 @@
 import groovy.time.TimeCategory 
 import groovy.time.TimeDuration
 
-
-def call(java.util.Date start, java.util.Date stop) {
+def stDuration (Date start, Date stop){
     TimeDuration td = TimeCategory.minus( stop, start )
-    return td
+     return td
+}
+
+def call(Date start, Date stop) {
+    return stDuration (start, stop)
 }
