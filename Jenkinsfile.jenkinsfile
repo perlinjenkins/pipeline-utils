@@ -26,7 +26,7 @@ pipeline {
                     Date stop = new Date()
                     def name = getCurrentStageName()
 					def duration = stageDuration(start, stop)
-					myList <<'The step: ' + ' ' + name + ' ' + 'takes-> ' + ' ' + duration
+					myList <<'The step: ' + ' ' + name + ' ' + ' takes-> ' + ' ' + duration
                 }				
 			}
 		}
@@ -39,7 +39,7 @@ pipeline {
                     Date stop = new Date()
                     def name = getCurrentStageName()
 				    def duration = stageDuration(start, stop)
-				    myList <<'The step: ' + ' ' + name + ' ' + 'takes-> ' + ' ' + duration
+				    myList <<'The step: ' + ' ' + name + ' ' + ' takes-> ' + ' ' + duration
                 }				
 			}
 		}
@@ -48,12 +48,12 @@ pipeline {
 		    steps{
 		        script{
 		            Date start = new Date()
-		            return_val = bat(script: 'python C:\\alex\\get_commit_list.py --branch %Branch% --url %GIT_HUB_URL% --commit %Commit_count%', returnStdout: true)
+		            return_val = bat(script: '@echo off\n python C:\\alex\\get_commit_list.py --branch %Branch% --url %GIT_HUB_URL% --commit %Commit_count%', returnStdout: true)
 		            echo return_val
 		            Date stop = new Date()
 					def name = getCurrentStageName()
 					def duration = stageDuration(start, stop)
-					myList <<'The step: ' + ' ' + name + ' ' + 'takes-> ' + ' ' + duration
+					myList <<'The step: ' + ' ' + name + ' ' + ' takes-> ' + ' ' + duration
 		        }    
 		    }   
 		}  
