@@ -61,7 +61,7 @@ pipeline {
 
     post {
         success {
-            mail to: 'perlinjenkins@gmail.com', from: 'aperlin@gmail.com',
+            mail to: 'alexander.perlin@hotmail.com', from: 'aperlin@gmail.com',
                 subject: "Build: ${env.JOB_NAME} - ${env.BUILD_NUMBER} - successed", 
                 body: "The last ${params.Commit_count} commits for branch: ${params.Branch}\n GitHub repo: ${params.GIT_HUB_URL}\n ${return_val}\n ${myList[0]}\n ${myList[1]}\n ${myList[2]}"
         }
